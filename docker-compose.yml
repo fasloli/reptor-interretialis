@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web-redirector:
+    build: .
+    image: reptor-nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    restart: always
